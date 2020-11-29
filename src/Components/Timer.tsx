@@ -16,19 +16,17 @@ const Timer: React.FC<{}> = () => {
     }
   };
   const startTimer = () => {
-    console.log("Timer Start");
     setOn(true);
     setIntervention((interval = setInterval(timer, 1000)));
   };
 
   const stopTimer = () => {
-    console.log("Timer Stop");
     setIntervention(clearInterval(interval));
     setOn(false);
   };
 
   const resetTimer = () => {
-    console.log("Timer Reset");
+    setOn(false);
     setIntervention(clearInterval(interval));
     setSeconds(0);
     setminutes(0);
@@ -41,9 +39,21 @@ const Timer: React.FC<{}> = () => {
         <span> {seconds < 10 ? `0${seconds}` : seconds}</span>
       </div>
       <div className="timerButton-container">
-        <TimerButton buttonAction={startTimer} buttonValue={"Start"} />
-        <TimerButton buttonAction={stopTimer} buttonValue={"Stop"} />
-        <TimerButton buttonAction={resetTimer} buttonValue={"Reset"} />
+        <TimerButton
+          buttonAction={startTimer}
+          buttonValue={"Start"}
+          isOn={isOn}
+        />
+        <TimerButton
+          buttonAction={stopTimer}
+          buttonValue={"Stop"}
+          isOn={false}
+        />
+        <TimerButton
+          buttonAction={resetTimer}
+          buttonValue={"Reset"}
+          isOn={false}
+        />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow, ShallowWrapper } from "enzyme";
+import { mount, ReactWrapper, shallow, ShallowWrapper } from "enzyme";
 import Timer from "../Components/Timer";
 
 describe("render timer component", () => {
@@ -17,11 +17,10 @@ describe("render timer component", () => {
 });
 
 describe("mounted timer", () => {
-  let container: ShallowWrapper<any, {}, React.Component<{}, {}, any>>;
+  const container : ShallowWrapper<any, {}, React.Component<{}, {}, any>> = shallow(<Timer />)
 
-  beforeEach(()=>(container = shallow(<Timer />)))
 
   it('should container button',()=>{
-    expect(container.find('buttonValue').length).toEqual(3)
+    expect(container.find('span').length).toEqual(3)
   })
 });

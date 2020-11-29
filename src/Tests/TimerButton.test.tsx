@@ -10,6 +10,7 @@ describe('TimerButton', ()=>{
             <TimerButton 
                 buttonAction={jest.fn()}
                 buttonValue={""}
+                isOn={false}
             />
         )
     })

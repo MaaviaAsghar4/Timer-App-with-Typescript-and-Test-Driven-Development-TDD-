@@ -23,6 +23,10 @@
   font-weight: bold;
 }
 
+.time-display span:hover{
+  font-size: 2.8rem;
+}
+
 .timerButton-container {
   display: flex;
   padding: 10px 5px;

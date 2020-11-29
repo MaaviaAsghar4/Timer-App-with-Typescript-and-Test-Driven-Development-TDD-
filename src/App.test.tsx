@@ -1,9 +1,18 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { shallow, ShallowWrapper } from "enzyme";
+import App from "./App";
+import Timer from './Components/Timer'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('App Component', ()=>{
+  let component: ShallowWrapper<any,{},React.Component<{},{},any>> 
+
+  beforeEach(()=> (component = shallow(<App />)))
+
+  it('render a div', ()=>{
+    expect(component.find('div').length).toEqual(1)
+  })
+
+  it('render the timer component',()=>{
+    expect(component.containsMatchingElement(<Timer />)).toEqual(true)
+  })
+})

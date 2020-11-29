@@ -1,0 +1,40 @@
+.timer-container {
+  box-shadow: 0 0 10px gray;
+  padding: 20px 20px;
+  border-radius: 0.3rem;
+  width: 60vw;
+  border-bottom: 10px solid rgb(129, 129, 216);
+}
+
+.time-display {
+  height: 30vh;
+  border: 2px solid rgb(129, 129, 216);
+  margin-bottom: 10px;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-display span{
+  font-size: 2.4rem;
+  margin-right: 10px;
+  color: rgb(77, 67, 134);
+  font-weight: bold;
+}
+
+.timerButton-container {
+  display: flex;
+  padding: 10px 5px;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid rgb(129, 129, 216);
+  border-radius: 0.3rem;
+}
+
+
+@media(max-width: 768px) {
+  .timer-container{
+    width: 80vw;
+  }
+}
